@@ -22,7 +22,7 @@ job('DotnetWebAPI/containerize'){
 	customWorkspace('C:/tools/jenkins-agent/workspace/DotnetWebAPI/compile')
 	label('Windows')
     	steps{
-		powerShell 'docker build . -t dotnetwebapi:1.0.2.$ENV:BUILD_NUMBER -t dotnetwebapi:latest -f C:/tools/jenkins-agent/workspace/DotnetConsoleApp/compile/DotnetWebAPI/DockerFile'
+		powerShell 'docker build . -t dotnetwebapi:1.0.2.$ENV:BUILD_NUMBER -t dotnetwebapi:latest -f C:/tools/jenkins-agent/workspace/DotnetWebAPI/compile/DotnetWebAPI/DockerFile'
 		powerShell 'aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 105414332808.dkr.ecr.us-west-1.amazonaws.com'
 		powerShell 'docker tag dotnetwebapi:1.0.2.$ENV:BUILD_NUMBER 105414332808.dkr.ecr.us-west-1.amazonaws.com/dotnetwebapi:1.0.2.$ENV:BUILD_NUMBER'
 		powerShell 'docker push 105414332808.dkr.ecr.us-west-1.amazonaws.com/dotnetwebapi:1.0.2.$ENV:BUILD_NUMBER'
