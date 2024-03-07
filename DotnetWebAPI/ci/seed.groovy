@@ -12,7 +12,7 @@ job('DotnetWebAPI/compile'){
         	}			
    	}    
   	publishers {
-        	downstream 'DotnetConsoleApp/dotnet-containerize', 'SUCCESS'
+        	downstream 'DotnetWebAPI/dotnet-containerize', 'SUCCESS'
    	}
 }
 
