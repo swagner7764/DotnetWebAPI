@@ -25,7 +25,7 @@
 #COPY --from=publish /app/publish .
 #ENTRYPOINT ["dotnet", "DotnetWebAPI.dll"]
 
-FROM mcr.microsoft.com/dotnet/runtime:8.0-nanoserver-ltsc2022
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-nanoserver-1809
 WORKDIR /app
 EXPOSE 8080
 COPY /DotnetWebAPI/bin/Debug/net8.0 .
