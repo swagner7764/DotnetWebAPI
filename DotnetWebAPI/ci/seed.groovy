@@ -2,7 +2,7 @@ job('DotnetWebAPI/compile'){
 	description 'Compile application'
 	label('Windows')
 	scm {
-        	github('swagner7764/DotnetConsoleApp', 'master')
+        	github('swagner7764/DotnetWebAPI', 'master')
     	}
   	steps{
       		powerShell 'nuget restore "$ENV:WORKSPACE"'
